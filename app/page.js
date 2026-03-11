@@ -54,7 +54,7 @@ export default function Home() {
         
         <div className="bg-white/80 rounded-2xl p-6 shadow-md">
           <h3 className="text-xl font-bold text-purple-800 mb-2">
-            ⚡ Fast Redirects
+            ⚡ Fast Redirects+
           </h3>
           <p className="text-purple-700">
             Lightning-fast redirection using server-side routing for the best performance.

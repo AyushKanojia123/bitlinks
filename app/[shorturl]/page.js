@@ -2,7 +2,8 @@ import { redirect } from "next/navigation"
 import clientPromise from "@/lib/mongodb"
 
 export default async function Page({ params }) {
-  const { shorturl } = params
+
+  const { shorturl } = await params   // ✅ FIX
 
   const client = await clientPromise
   const db = client.db("bitlinks")
@@ -11,7 +12,7 @@ export default async function Page({ params }) {
   const doc = await collection.findOne({ shorturl })
 
   if (doc?.url) {
-    redirect(doc.url) // external redirect works
+    redirect(doc.url)
   }
 
   // fallback redirect
